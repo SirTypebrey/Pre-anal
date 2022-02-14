@@ -1,5 +1,7 @@
 import React from 'react';
 import { Navbar, Container, Offcanvas, Nav } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import uuid from 'react-uuid';
 
 import { MenuElements } from '../data/MenuElements';
 
