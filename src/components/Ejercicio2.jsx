@@ -1,8 +1,10 @@
 import React from 'react';
+import ListaClase from './ListaClase';
 
 class Ejercicio2 extends React.Component {
   constructor(props) {
     super(props);
+    this.elementos = [{}];
   }
 
   render() {
@@ -34,6 +36,7 @@ class Ejercicio2 extends React.Component {
             </li>
           </li>
         </ul>
+        <ListaClase elementos={this.elementos} />
       </div>
     );
   }

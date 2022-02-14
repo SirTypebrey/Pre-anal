@@ -1,13 +1,14 @@
 import React from 'react';
-import './style.css';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+
+import { MenuElements } from './data/MenuElements';
 import Barrita from './components/Barrita';
-import Ejercicio1 from './components/Ejercicio1';
-import Ejercicio2 from './components/Ejercicio2';
-import Ejercicio3 from './components/Ejercicio3';
+
+import './style.css';
 
 export default function App() {
   return (
-    <>
+    <Router>
       <Barrita />
       <h1>Desarrollo de Interfaces: Examen React.js </h1>
       <p>
@@ -17,9 +18,16 @@ export default function App() {
         tener el nombre examen-react-Nombre-Apellido1, donde nombre y apellido
         son los tuyos.
       </p>
-      <Ejercicio1 />
-      <Ejercicio2 />
-      <Ejercicio3 />
-    </>
+      {MenuElements.map((item) => {
+        return (
+          <Route
+            key={item.id}
+            path={item.path}
+            exact
+            component={item.component}
+          />
+        );
+      })}
+    </Router>
   );
 }
