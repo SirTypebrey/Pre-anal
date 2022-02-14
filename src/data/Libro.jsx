@@ -15,18 +15,19 @@ class ComponenteListaClase extends React.Component {
   render() {
     return (
       <div>
-        <Card style={{ width: '18rem' }}>
+        <Card bg="dark" text="light" style={{ width: '40%' }}>
           <Card.Img variant="top" src={this.portada} style={{ width: '75%' }} />
           <Card.Body>
-            <Card.Title>Card Title</Card.Title>
+            <Card.Title>Titulo: {this.titulo}</Card.Title>
             <Card.Text>
-              <p>Titulo: {this.titulo}</p>
               <p>Autor: {this.autor}</p>
-              <p>Fecha: {this.fecha}</p>
               <p>Numero de paginas: {this.numero}</p>
               <p>Idioma: {this.idioma}</p>
             </Card.Text>
           </Card.Body>
+          <Card.Footer>
+            <small className="text-muted">Fecha: {this.fecha}</small>
+          </Card.Footer>
         </Card>
       </div>
     );

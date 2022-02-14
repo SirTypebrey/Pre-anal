@@ -1,11 +1,22 @@
 import React from 'react';
+import axios from 'axios';
+import { Carousel, Container } from 'react-bootstrap';
 
 class Ejercicio3 extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { coins: [] };
+  }
+
+  async componentDidMount() {
+    const res = await axios.get(
+      'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=3&page=1'
+    );
+    this.setState({ coins: res.data });
   }
 
   render() {
+    console.log(this.state.coins);
     return (
       <div id="ej3">
         <h2>Ejercicio 3</h2>
@@ -44,6 +55,21 @@ class Ejercicio3 extends React.Component {
             <b> - 1 punto</b>
           </li>
         </ol>
+        <Container>
+          <Carousel variant="dark">
+            {this.state.coins.map((item) => {
+              return (
+                <Carousel.Item>
+                  <img className="d-block w-100" src={item.image} />
+                  <Carousel.Caption>
+                    <h3>Titulo: {item.name}</h3>
+                    <p>Autor: {item.symbol}</p>
+                  </Carousel.Caption>
+                </Carousel.Item>
+              );
+            })}
+          </Carousel>
+        </Container>
       </div>
     );
   }

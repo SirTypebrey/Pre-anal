@@ -12,7 +12,7 @@ class Barrita extends React.Component {
 
   render() {
     return (
-      <Navbar bg="light" expand={false}>
+      <Navbar bg="dark" variant="dark" expand={false}>
         <Container fluid>
           <Navbar.Brand href="#">Navbar Offcanvas</Navbar.Brand>
           <Navbar.Toggle aria-controls="offcanvasNavbar" />

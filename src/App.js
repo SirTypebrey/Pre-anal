@@ -4,8 +4,6 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { MenuElements } from './data/MenuElements';
 import Barrita from './components/Barrita';
 
-import './style.css';
-
 export default function App() {
   return (
     <Router>
